@@ -5,7 +5,6 @@ import Fade from "react-reveal/Fade";
 function Section(props) {
   const { title, description, backgroundImg, leftBtnText, rightBtnText } =
     props;
-  console.log(props);
 
   return (
     <Wrap bgImage={backgroundImg}>
