@@ -4,6 +4,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
 import { selectCars } from "../features/car/carSlice";
 import { useSelector } from "react-redux";
+import { Button } from '@material-ui/core'
 
 function Header() {
   const [burgerStatus, setBurgerStatus] = useState(false);
@@ -12,22 +13,22 @@ function Header() {
 
   return (
     <Container>
-      <a>
+      <Button>
         <img src="/images/logo.svg" alt="" />
-      </a>
+      </Button>
 
       <Menu>
         {cars &&
           cars.map((car, index) => (
-            <a key={index} href="#">
+            <Button key={index}>
               {car}
-            </a>
+            </Button>
           ))}
       </Menu>
 
       <RightMenu>
-        <a href="#">Shop</a>
-        <a href="#">Tesla Account</a>
+        <Button>Shop</Button>
+        <Button>Tesla Account</Button>
         <CustomMenu onClick={() => setBurgerStatus(true)} />
       </RightMenu>
 
@@ -38,31 +39,31 @@ function Header() {
         {cars &&
           cars.map((car, index) => (
             <li key={index}>
-              <a href="#">
+              <Button>
                 {car}
-              </a>
+              </Button>
             </li>
           ))}
         <li>
-          <a href="#">Existing Inventory</a>
+          <Button>Existing Inventory</Button>
         </li>
         <li>
-          <a href="#">Used Inventory</a>
+          <Button>Used Inventory</Button>
         </li>
         <li>
-          <a href="#">Trade-in</a>
+          <Button>Trade-in</Button>
         </li>
         <li>
-          <a href="#">Cybertruck</a>
+          <Button>Cybertruck</Button>
         </li>
         <li>
-          <a href="#">Roadaster</a>
+          <Button>Roadaster</Button>
         </li>
         <li>
-          <a href="#">Existing Inventory</a>
+          <Button>Existing Inventory</Button>
         </li>
         <li>
-          <a href="#">Existing Inventory</a>
+          <Button>Existing Inventory</Button>
         </li>
       </BurgerNav>
     </Container>

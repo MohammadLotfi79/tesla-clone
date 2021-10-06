@@ -1,21 +1,25 @@
 import React from "react";
 import styled from "styled-components";
-import Fade from "react-reveal/Fade";
+import { useSpring, animated } from 'react-spring'
 
 function Section(props) {
   const { title, description, backgroundImg, leftBtnText, rightBtnText } =
     props;
 
+  const animation = useSpring({ to: { opacity: 1 }, from: { opacity: 0 } })
+
+
   return (
     <Wrap bgImage={backgroundImg}>
-      <Fade bottom>
+
+      <animated.div style={animation}>
         <ItemText>
           <h1>{title}</h1>
           <p>{description}</p>
         </ItemText>
-      </Fade>
+      </animated.div>
 
-      <Fade bottom>
+      <animated.div style={animation}>
         <Buttons>
           <ButtonGroup>
             <LeftButton>{leftBtnText}</LeftButton>
@@ -23,7 +27,8 @@ function Section(props) {
           </ButtonGroup>
           <DownArrow src="/images/down-arrow.svg" />
         </Buttons>
-      </Fade>
+      </animated.div>
+
     </Wrap>
   );
 }
